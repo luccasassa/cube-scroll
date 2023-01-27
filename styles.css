@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+*::selection {
+  color: #000;
+  background-color: #eee;
+}
+
+html,
+body {
+  font-family: Consolas, monospace;
+  background: #f2f2f2;
+  padding: 0;
+  margin: 0;
+}
+
+/* MOUSE SCROLL */
+#mouse-scroll {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  z-index: 9999;
+}
+
+.mouse {
+  top: 170px;
+  width: 20px;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  transform: none;
+}
+
+.mouse-in {
+  position: relative;
+  display: block;
+  width: 2px;
+  height: 7px;
+  margin: 5px auto;
+  background: #ccc;
+  animation: mouse 1.2s ease infinite;
+}
+
+@keyframes mouse {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* QUOTES */
+.quotes {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 0;
+  top: 20px;
+}
+
+.quotes article {
+  border-bottom: 1px dashed #ddd;
+  text-align: justify;
+  line-height: 1.8;
+  background: #fff;
+  max-width: 620px;
+  font-size: 14px;
+  padding: 80px 40px;
+  margin: 0 auto;
+  width: 80%;
+  color: #333;
+}
+
+.quotes article em {
+  font-style: normal;
+  font-size: 12px;
+  color: #666;
+}
+
+.quotes article em:before {
+  content: "~";
+  margin: 0 10px;
+}
+
+@media (max-width: 600px) {
+  .mouse {
+    width: 14px;
+    height: 21px;
+  }
+  
+  .mouse-in {
+    width: 2px;
+    height: 5px;
+  }
+
+  .quotes article {
+    padding: 60px 30px;
+    line-height: 1.5;
+    font-size: 12px;
+  }
+  .quotes article em {
+    font-size: 10px;
+  }
+}
